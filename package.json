@@ -1,9 +1,11 @@
 {
   "name": "angularjs",
-  "version": "0.0.1",
-  "private": true,
+  "main": "./lib/angularjs",
+  "version": "0.0.2",
   "description": "An AngularJS package for Atom",
+  "activationEvents": ["angularjs:toggle"],
   "repository": "https://github.com/angular-ui/AngularJS-Atom",
+  "readmeFilename": "README.md",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
