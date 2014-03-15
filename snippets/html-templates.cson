@@ -1,0 +1,25 @@
+".text.html":
+  "angular scaffold":
+    "prefix": "ngindex"
+    "body": """
+      <html>
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/$1/angular.js"></script>
+      </head>
+      <body ng-app>
+       $2
+      </body>
+      </html>
+    """
+  "angular.js from CDN":
+    "prefix": "ngsa"
+    "body": """
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/$1/angular.js"></script>
+    """
+  "ngTemplate script tag":
+    "prefix": "ngst"
+    "body": """
+      <script type="text/ng-template" id="$1">
+        $2
+      </script>
+    """
