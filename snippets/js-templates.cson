@@ -149,3 +149,52 @@
         $3
       }
     """
+  "$http":
+    "prefix": "nghttp"
+    "body": """
+      $http({method: '${1:GET}', url: '$2'})
+      .success(function(data, status, headers, config) {
+        $3
+      })
+      .error(function(data, status, headers, config) {
+        $4
+      });
+    """
+  "copy":
+    "prefix": "ngcopy"
+    "body": """
+      angular.copy(${1:source} ${2:, ${3:destination}});
+    """
+  "element":
+    "prefix": 'ngel'
+    "body": "angular.element(${1:element})$2"
+  "equals":
+    "prefix": "ngeq"
+    "body": "angular.equals(${1:object1}, ${2:object2});"
+  "extend":
+    "prefix": "ngext"
+    "body": "angular.extend(${1:destinationObject}, ${2:sourceObject})$3"
+  "isArray":
+    "prefix": "ngisa"
+    "body": "angular.isArray(${1:value});"
+  "isDefined":
+    "prefix": "ngisd"
+    "body": "angular.isDefined(${1:value});"
+  "isFunction":
+    "prefix": "ngisf"
+    "body": "angular.isFunction(${1:value});"
+  "isNumber":
+    "prefix": "ngisn"
+    "body": "angular.isNumber(${1:value});"
+  "isObject":
+    "prefix": "ngiso"
+    "body": "angular.isObject(${1:value});"
+  "isString":
+    "prefix": "ngiss"
+    "body": "angular.isString(${1:value});"
+  "lowercase":
+    "prefix": "nglo"
+    "body": "angular.lowercase(${1:string})$2"
+  "uppercase":
+    "prefix": "ngup"
+    "body": "angular.uppercase(${1:string})$2"

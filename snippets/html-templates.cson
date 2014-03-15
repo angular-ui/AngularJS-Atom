@@ -1,4 +1,4 @@
-".text.html":
+".text.html:not(.meta.tag)":
   "angular scaffold":
     "prefix": "ngindex"
     "body": """
@@ -22,4 +22,29 @@
       <script type="text/ng-template" id="$1">
         $2
       </script>
+    """
+  "ngInclude":
+    "prefix": "nginc"
+    "body": """
+      <ng-include src="$1" ${2: onload="$3"} ${4: autoscroll="$5"}></ng-include>
+    """
+  "ngPluralize":
+    "prefix": "ngplural"
+    "body": """
+      <ng-pluralize count="$1" when="$2" ${3: offset="$4"}></ng-pluralize>
+    """
+  "ngSwitch":
+    "prefix": "ngswitch"
+    "body": """
+      <ng-switch on="$1">$2</ng-switch>
+    """
+  "script template":
+    "prefix": "ngtmpl"
+    "body": """
+      <script type="text/ng-template">$1</script>
+    """
+  "ngView":
+    "prefix": "ngview"
+    "body": """
+      <ng-view ${1: onload="$2"} ${3: $autoscroll="$4"}></ng-view>
     """
