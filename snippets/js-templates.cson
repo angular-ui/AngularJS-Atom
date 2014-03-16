@@ -1,0 +1,200 @@
+".source.js":
+  "module":
+    "prefix": "ngm"
+    "body": "angular.module('$1', [$2])$3"
+  "module as variable":
+    "prefix": "ngma"
+    "body": "var $1 = angular.module('$2', [$3])$4"
+  "module with config":
+    "prefix": "ngmc"
+    "body": """
+      var $1 = angular.module('$2', [$3], function($4) {
+          $5
+      })$6
+    """
+  "module factory":
+    "prefix": "ngmfa"
+    "body": """
+      factory('$1', function($2) {
+        $3
+      })$4
+    """
+  "module filter":
+    "prefix": "ngmfi"
+    "body": """
+      filter('$1', function($2) {
+        return function (input, $3) {
+          $4
+        };
+      })$5
+    """
+  "module service":
+    "prefix": "ngms"
+    "body": """
+      service('$1', function($2) {
+        $3
+      })$4
+    """
+  "$routeProvider.otherwise":
+    "prefix": "ngro"
+    "body": """
+      $routeProvider.otherwise({redirectTo: '$1' });
+    """
+  "$routeProvider.when":
+    "prefix": "ngrw"
+    "body": """
+      $routeProvider.when('$1', {templateUrl: '$2', controller: '$3'});
+    """
+  "$routeProvider.when with resolve":
+    "prefix": "ngrwr"
+    "body": """
+      $routeProvider.when('$1', {
+        templateUrl: '$2',
+        controller: '$3'${4:,
+        resolve: {
+          $5
+        }}
+      });
+    """
+  "angular forEach":
+    "prefix": "ngfor"
+    "body": """
+      angular.forEach($1, function(value, key) {
+        $2
+      });
+    """
+  "directive include link function":
+    "prefix": "ngdl"
+    "body": """
+      .directive('$1', function($2) {
+        $3
+        return function(scope, element, attrs) {
+          $4
+        }
+      })$5
+    """
+  "linking func of directive":
+    "prefix": "ngdlf"
+    "body": """
+      function (scope, element, attrs) {
+        $1
+      }
+    """
+  "directive include compile function":
+    "prefix": "ngdc"
+    "body": """
+      .directive('$1', function factory($2) {
+        var directiveDefinitionObject = {
+          $3
+          compile: function compile(tElement, tAttrs, transclude) {
+            $4
+            return function (scope, element, attrs) {
+              $5
+            }
+          }
+        };
+        return directiveDefinitionObject;
+      })$6
+    """
+  "compile function":
+    "prefix": "ngdcf"
+    "body": """
+      function compile(tElement, tAttrs, transclude) {
+        $1
+        return function (scope, element, attrs) {
+          $2
+        }
+      }$3
+    """
+  "$scope.$broadcast":
+    "prefix": "ngb"
+    "body": """
+      $scope.$broadcast('$1', $2);
+    """
+  "$scope.$emit":
+    "prefix": "nge"
+    "body": """
+      $scope.$emit('', );
+    """
+  "function inside $scope":
+    "prefix": "ngf"
+    "body": """
+      $scope.$1 = function($2) {
+        $3
+      };
+    """
+  "$scope.$on":
+    "prefix": "ngon"
+    "body": """
+      $scope.$on('$1', function(event, $2) {
+        $3
+      });
+    """
+  "variable inside $scope":
+    "prefix": "ngv"
+    "body": """
+      $scope.$1 = $2;
+    """
+  "$scope.$watch":
+    "prefix": "ngw"
+    "body": """
+      $scope.$watch('$1', function(newValue, oldValue) {
+        $2
+      });
+    """
+  "controller":
+    "prefix": "ngc"
+    "body": """
+      var $1 = function($scope, $2) {
+        $3
+      }
+    """
+  "$http":
+    "prefix": "nghttp"
+    "body": """
+      $http({method: '${1:GET}', url: '$2'})
+      .success(function(data, status, headers, config) {
+        $3
+      })
+      .error(function(data, status, headers, config) {
+        $4
+      });
+    """
+  "copy":
+    "prefix": "ngcopy"
+    "body": """
+      angular.copy(${1:source} ${2:, ${3:destination}});
+    """
+  "element":
+    "prefix": 'ngel'
+    "body": "angular.element(${1:element})$2"
+  "equals":
+    "prefix": "ngeq"
+    "body": "angular.equals(${1:object1}, ${2:object2});"
+  "extend":
+    "prefix": "ngext"
+    "body": "angular.extend(${1:destinationObject}, ${2:sourceObject})$3"
+  "isArray":
+    "prefix": "ngisa"
+    "body": "angular.isArray(${1:value});"
+  "isDefined":
+    "prefix": "ngisd"
+    "body": "angular.isDefined(${1:value});"
+  "isFunction":
+    "prefix": "ngisf"
+    "body": "angular.isFunction(${1:value});"
+  "isNumber":
+    "prefix": "ngisn"
+    "body": "angular.isNumber(${1:value});"
+  "isObject":
+    "prefix": "ngiso"
+    "body": "angular.isObject(${1:value});"
+  "isString":
+    "prefix": "ngiss"
+    "body": "angular.isString(${1:value});"
+  "lowercase":
+    "prefix": "nglo"
+    "body": "angular.lowercase(${1:string})$2"
+  "uppercase":
+    "prefix": "ngup"
+    "body": "angular.uppercase(${1:string})$2"
