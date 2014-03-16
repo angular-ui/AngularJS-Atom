@@ -418,7 +418,8 @@ $http({method: '${1:GET}', url: '$2'})
 })
 .error(function(data, status, headers, config) {
   $4
-});```
+});
+```
 
 ##### ngcopy
 ```
