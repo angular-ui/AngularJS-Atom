@@ -123,6 +123,13 @@
         $3
       };
     """
+  "controller prototype method":
+    "prefix": "ngcp"
+    "body": """
+      $1Ctrl.prototype.$2 = function $2($3) {
+        $4
+      };
+    """
   "$scope.$on":
     "prefix": "ngon"
     "body": """
@@ -147,7 +154,27 @@
     "body": """
       var $1 = function($scope, $2) {
         $3
+      };
+    """
+  "controller $inject Syntax":
+    "prefix": "ngc$"
+    "body": """
+      $1Ctrl.$inject = [$scope, '$2'];
+      function $1Ctrl($scope, $2) {
+        $4
       }
+      angular.module($3).controller('$1Ctrl', $1Ctrl);
+    """
+  "ngdocs comment":
+    "prefix": "ngdoc"
+    "body": """
+      /**
+       * @ngdoc ${1:function}
+       * @name $2
+       * @description
+       * $3
+       * 
+       */
     """
   "$http":
     "prefix": "nghttp"
