@@ -384,6 +384,13 @@ $scope.$1 = function($2) {
 };
 ```
 
+##### ngcp
+```
+$1Ctrl.prototype.$2 = function $2($3) {
+  $4
+};
+```
+
 ##### ngon
 ```
 $scope.$on('$1', function(event, $2) {
@@ -408,6 +415,26 @@ $scope.$watch('$1', function(newValue, oldValue) {
 var $1 = function($scope, $2) {
   $3
 }
+```
+
+##### ngc$
+```
+$1Ctrl.$inject = [$scope, '$2'];
+function $1Ctrl($scope, $2) {
+  $4
+}
+angular.module($3).controller('$1Ctrl', $1Ctrl);
+```
+
+##### ngdoc
+```
+/**
+ * @ngdoc ${1:function}
+ * @name $2
+ * @description
+ * $3
+ * 
+ */
 ```
 
 ##### nghttp
