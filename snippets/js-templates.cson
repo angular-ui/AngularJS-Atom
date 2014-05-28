@@ -159,7 +159,7 @@
   "controller $inject Syntax":
     "prefix": "ngc$"
     "body": """
-      $1Ctrl.$inject = [$scope, '$2'];
+      $1Ctrl.$inject = ['$scope', '$2'];
       function $1Ctrl($scope, $2) {
         $4
       }
@@ -173,7 +173,7 @@
        * @name $2
        * @description
        * $3
-       * 
+       *
        */
     """
   "$http":
