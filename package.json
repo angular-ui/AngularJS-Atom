@@ -1,6 +1,6 @@
 {
   "name": "angularjs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An AngularJS package for Atom",
   "activationEvents": ["angularjs:toggle"],
   "repository": "https://github.com/angular-ui/AngularJS-Atom",
