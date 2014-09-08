@@ -38,12 +38,12 @@
   "$routeProvider.otherwise":
     "prefix": "ngro"
     "body": """
-      $routeProvider.otherwise({redirectTo: '$1' });
+      $routeProvider.otherwise({redirectTo: '$1' })
     """
   "$routeProvider.when":
     "prefix": "ngrw"
     "body": """
-      $routeProvider.when('$1', {templateUrl: '$2', controller: '$3'});
+      $routeProvider.when('$1', {templateUrl: '$2', controller: '$3'})
     """
   "$routeProvider.when with resolve":
     "prefix": "ngrwr"
@@ -54,14 +54,14 @@
         resolve: {
           $5
         }}
-      });
+      })
     """
   "angular forEach":
     "prefix": "ngfor"
     "body": """
       angular.forEach($1, function(value, key) {
         $2
-      });
+      })
     """
   "directive include link function":
     "prefix": "ngdl"
@@ -109,12 +109,12 @@
   "$scope.$broadcast":
     "prefix": "ngb"
     "body": """
-      $scope.$broadcast('$1', $2);
+      $scope.$broadcast('$1', $2)
     """
   "$scope.$emit":
     "prefix": "nge"
     "body": """
-      $scope.$emit('', );
+      $scope.$emit('', )
     """
   "function inside $scope":
     "prefix": "ngf"
@@ -135,7 +135,7 @@
     "body": """
       $scope.$on('$1', function(event, $2) {
         $3
-      });
+      })
     """
   "variable inside $scope":
     "prefix": "ngv"
@@ -147,7 +147,7 @@
     "body": """
       $scope.$watch('$1', function(newValue, oldValue) {
         $2
-      });
+      })
     """
   "controller":
     "prefix": "ngc"
@@ -163,7 +163,7 @@
       function $1Ctrl($scope, $2) {
         $4
       }
-      angular.module($3).controller('$1Ctrl', $1Ctrl);
+      angular.module($3).controller('$1Ctrl', $1Ctrl)
     """
   "ngdocs comment":
     "prefix": "ngdoc"
@@ -190,35 +190,35 @@
   "copy":
     "prefix": "ngcopy"
     "body": """
-      angular.copy(${1:source} ${2:, ${3:destination}});
+      angular.copy(${1:source} ${2:, ${3:destination}})
     """
   "element":
     "prefix": 'ngel'
     "body": "angular.element(${1:element})$2"
   "equals":
     "prefix": "ngeq"
-    "body": "angular.equals(${1:object1}, ${2:object2});"
+    "body": "angular.equals(${1:object1}, ${2:object2})"
   "extend":
     "prefix": "ngext"
     "body": "angular.extend(${1:destinationObject}, ${2:sourceObject})$3"
   "isArray":
     "prefix": "ngisa"
-    "body": "angular.isArray(${1:value});"
+    "body": "angular.isArray(${1:value})"
   "isDefined":
     "prefix": "ngisd"
-    "body": "angular.isDefined(${1:value});"
+    "body": "angular.isDefined(${1:value})"
   "isFunction":
     "prefix": "ngisf"
-    "body": "angular.isFunction(${1:value});"
+    "body": "angular.isFunction(${1:value})"
   "isNumber":
     "prefix": "ngisn"
-    "body": "angular.isNumber(${1:value});"
+    "body": "angular.isNumber(${1:value})"
   "isObject":
     "prefix": "ngiso"
-    "body": "angular.isObject(${1:value});"
+    "body": "angular.isObject(${1:value})"
   "isString":
     "prefix": "ngiss"
-    "body": "angular.isString(${1:value});"
+    "body": "angular.isString(${1:value})"
   "lowercase":
     "prefix": "nglo"
     "body": "angular.lowercase(${1:string})$2"
