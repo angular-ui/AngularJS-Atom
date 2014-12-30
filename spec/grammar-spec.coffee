@@ -37,3 +37,12 @@ describe 'directive grammar', ->
       '''
 
       expect(lines[0][3]).toEqual value: 'ng-view', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.other.attribute-name.html.angular']
+
+  describe 'directive element', ->
+    it 'tokenizes ng-include element inside HTML', ->
+      lines = grammar.tokenizeLines '''
+        <ng-include src=""></ng-include>
+      '''
+
+      expect(lines[0][1]).toEqual value: 'ng-include', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
+      expect(lines[0][5]).toEqual value: 'ng-include', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
