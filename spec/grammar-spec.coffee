@@ -38,6 +38,13 @@ describe 'directive grammar', ->
 
       expect(lines[0][3]).toEqual value: 'ng-view', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.other.attribute-name.html.angular']
 
+    it 'tokenizes capitalized ng-repeat attribute inside HTML', ->
+      lines = grammar.tokenizeLines '''
+        <dd NG-REPEAT="availability in phone.availability">{{availability}}</dd>
+      '''
+
+      expect(lines[0][3]).toEqual value: 'NG-REPEAT', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.other.attribute-name.html.angular']
+
   describe 'directive element', ->
     it 'tokenizes ng-include element inside HTML', ->
       lines = grammar.tokenizeLines '''
@@ -46,3 +53,11 @@ describe 'directive grammar', ->
 
       expect(lines[0][1]).toEqual value: 'ng-include', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
       expect(lines[0][5]).toEqual value: 'ng-include', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
+
+    it 'tokenizes capitalized ng-include element inside HTML', ->
+      lines = grammar.tokenizeLines '''
+        <NG-INCLUDE src=""></NG-INCLUDE>
+      '''
+
+      expect(lines[0][1]).toEqual value: 'NG-INCLUDE', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
+      expect(lines[0][5]).toEqual value: 'NG-INCLUDE', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']

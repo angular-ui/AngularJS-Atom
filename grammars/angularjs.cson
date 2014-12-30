@@ -61,7 +61,7 @@
 'repository':
   'angular-directive-attribute':
     'name': 'entity.other.attribute-name.html.angular'
-    'match': '(ng-(app|strict-di|bind|bind-html|bind-template|blur|change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|dblclick|disabled|focus|form|hide|href|if|include|init|keydown|keypress|keyup|list|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|non-bindable|open|paste|pluralize|readonly|repeat|repeat-start|repeat-end|selected|show|src|srcset|style|submit|switch|switch-when|switch-default|transclude|value|swipe-left|swipe-right|view|messages|message|animate-children))'
+    'match': '(?i:ng-(app|strict-di|bind|bind-html|bind-template|blur|change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|dblclick|disabled|focus|form|hide|href|if|include|init|keydown|keypress|keyup|list|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|non-bindable|open|paste|pluralize|readonly|repeat|repeat-start|repeat-end|selected|show|src|srcset|style|submit|switch|switch-when|switch-default|transclude|value|swipe-left|swipe-right|view|messages|message|animate-children))'
   'embedded-code':
     'patterns': [
       {
