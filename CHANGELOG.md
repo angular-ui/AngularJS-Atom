@@ -1,3 +1,12 @@
+### 0.1.0 (2015-01-02)
+
+#### Features
+* add directives and functions for angular v1.3.x
+* add syntax highlight for angular directives
+  (closes [#13](https://github.com/angular-ui/AngularJS-Atom/issues/13))
+* add syntax highlight for angular expressions
+  (closes [#18](https://github.com/angular-ui/AngularJS-Atom/issues/18))
+
 ### 0.0.5 (2014-09-08)
 
 #### Bug fixes
