@@ -74,8 +74,42 @@
       { 'include': 'source.js' }
     ]
   'angular-directive-attribute':
-    'name': 'entity.other.attribute-name.html.angular'
-    'match': '(?i:ng-(app|strict-di|bind|bind-html|bind-template|blur|change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|dblclick|disabled|focus|form|hide|href|if|include|init|keydown|keypress|keyup|list|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|non-bindable|open|paste|pluralize|readonly|repeat|repeat-start|repeat-end|selected|show|src|srcset|style|submit|switch|switch-when|switch-default|transclude|value|swipe-left|swipe-right|view|messages|message|animate-children))'
+    'begin': '\\b((?i:ng-(app|strict-di|bind|bind-html|bind-template|blur|change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|dblclick|disabled|focus|form|hide|href|if|include|init|keydown|keypress|keyup|list|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|non-bindable|open|paste|pluralize|readonly|repeat|repeat-start|repeat-end|selected|show|src|srcset|style|submit|switch|switch-when|switch-default|transclude|value|swipe-left|swipe-right|view|messages|message|animate-children)))\\b\\s*(=?)'
+    'beginCaptures':
+      '1':
+         'name': 'entity.other.attribute-name.html.angular'
+    'end': '(?<=\'|")|(?=\\s|>)'
+    'name': 'meta.attribute.html.angular'
+    'patterns': [
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.html.angular'
+        'contentName': 'meta.tag.template.angular'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.html.angular'
+        'name': 'string.quoted.double.html.angular'
+        'patterns': [
+        ]
+      }
+      {
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.html.angular'
+        'contentName': 'meta.tag.template.angular'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.html.angular'
+        'name': 'string.quoted.single.html.angular'
+        'patterns': [
+        ]
+      }
+    ]
   'embedded-code':
     'patterns': [
       {

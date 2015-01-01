@@ -18,7 +18,7 @@ describe 'directive grammar', ->
         <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
       '''
 
-      expect(lines[0][3]).toEqual value: 'ng-repeat', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.other.attribute-name.html.angular']
+      expect(lines[0][3]).toEqual value: 'ng-repeat', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
     it 'tokenizes ng-src and ng-click attributes inside HTML', ->
       lines = grammar.tokenizeLines '''
@@ -27,23 +27,25 @@ describe 'directive grammar', ->
         </li>
       '''
 
-      expect(lines[0][3]).toEqual value: 'ng-repeat', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'entity.other.attribute-name.html.angular']
-      expect(lines[1][4]).toEqual value: 'ng-src', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'entity.other.attribute-name.html.angular']
-      expect(lines[1][10]).toEqual value: 'ng-click', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'entity.other.attribute-name.html.angular']
+      console.log(lines[1][4])
+
+      expect(lines[0][3]).toEqual value: 'ng-repeat', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+      expect(lines[1][4]).toEqual value: 'ng-src', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+      expect(lines[1][10]).toEqual value: 'ng-click', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
     it 'tokenizes ng-view attribute without value inside HTML', ->
       lines = grammar.tokenizeLines '''
         <div ng-view class="view-frame"></div>
       '''
 
-      expect(lines[0][3]).toEqual value: 'ng-view', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.other.attribute-name.html.angular']
+      expect(lines[0][3]).toEqual value: 'ng-view', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
     it 'tokenizes capitalized ng-repeat attribute inside HTML', ->
       lines = grammar.tokenizeLines '''
         <dd NG-REPEAT="availability in phone.availability">{{availability}}</dd>
       '''
 
-      expect(lines[0][3]).toEqual value: 'NG-REPEAT', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.other.attribute-name.html.angular']
+      expect(lines[0][3]).toEqual value: 'NG-REPEAT', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
   describe 'directive element', ->
     it 'tokenizes ng-include element inside HTML', ->
