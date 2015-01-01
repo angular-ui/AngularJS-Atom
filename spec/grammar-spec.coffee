@@ -61,3 +61,13 @@ describe 'directive grammar', ->
 
       expect(lines[0][1]).toEqual value: 'NG-INCLUDE', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
       expect(lines[0][5]).toEqual value: 'NG-INCLUDE', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'entity.name.tag.block.any.html.angular']
+
+  describe 'angular expression', ->
+    it 'tokenizes angular expressions in HTML tags', ->
+      lines = grammar.tokenizeLines '''
+        <dd>{{phone.camera.primary}}</dd>
+      '''
+
+      expect(lines[0][3]).toEqual value: '{{', scopes: ['text.html.angular', 'meta.tag.template.angular', 'punctuation.definition.block.begin.angular']
+      expect(lines[0][4]).toEqual value: 'phone.camera.primary', scopes: ['text.html.angular', 'meta.tag.template.angular']
+      expect(lines[0][5]).toEqual value: '}}', scopes: ['text.html.angular', 'meta.tag.template.angular', 'punctuation.definition.block.end.angular']
