@@ -93,6 +93,8 @@
             'name': 'punctuation.definition.string.end.html.angular'
         'name': 'string.quoted.double.html.angular'
         'patterns': [
+          { 'include': '#angular-expressions' }
+          { 'include': 'source.js' }
         ]
       }
       {
@@ -107,6 +109,8 @@
             'name': 'punctuation.definition.string.end.html.angular'
         'name': 'string.quoted.single.html.angular'
         'patterns': [
+          { 'include': '#angular-expressions' }
+          { 'include': 'source.js' }
         ]
       }
     ]

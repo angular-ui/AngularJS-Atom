@@ -27,11 +27,9 @@ describe 'directive grammar', ->
         </li>
       '''
 
-      console.log(lines[1][4])
-
       expect(lines[0][3]).toEqual value: 'ng-repeat', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
       expect(lines[1][4]).toEqual value: 'ng-src', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
-      expect(lines[1][10]).toEqual value: 'ng-click', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+      expect(lines[1][12]).toEqual value: 'ng-click', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
     it 'tokenizes ng-view attribute without value inside HTML', ->
       lines = grammar.tokenizeLines '''
@@ -73,3 +71,37 @@ describe 'directive grammar', ->
       expect(lines[0][3]).toEqual value: '{{', scopes: ['text.html.angular', 'meta.tag.template.angular', 'punctuation.definition.block.begin.angular']
       expect(lines[0][4]).toEqual value: 'phone.camera.primary', scopes: ['text.html.angular', 'meta.tag.template.angular']
       expect(lines[0][5]).toEqual value: '}}', scopes: ['text.html.angular', 'meta.tag.template.angular', 'punctuation.definition.block.end.angular']
+
+    it 'tokenizes angular expressions in value of attributes with double quoted', ->
+      lines = grammar.tokenizeLines '''
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"></li>
+      '''
+
+      expect(lines[0][5]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.begin.html.angular']
+      expect(lines[0][6]).toEqual value: 'phone in phones | filter:query | orderBy:orderProp', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular']
+      expect(lines[0][7]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.end.html.angular']
+
+    it 'tokenizes angular expressions in value of attributes with single quoted', ->
+      lines = grammar.tokenizeLines '''
+        <li ng-repeat='img in phone.images'>
+      '''
+
+      expect(lines[0][5]).toEqual value: '\'', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.single.html.angular', 'punctuation.definition.string.begin.html.angular']
+      expect(lines[0][6]).toEqual value: 'img in phone.images', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.single.html.angular', 'meta.tag.template.angular']
+      expect(lines[0][7]).toEqual value: '\'', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.single.html.angular', 'punctuation.definition.string.end.html.angular']
+
+    it 'tokenizes angular expressions in value of attributes with {{}}', ->
+      lines = grammar.tokenizeLines '''
+        <img ng-src="{{img}}" ng-click="{{setImage(img)}}">
+      '''
+
+      expect(lines[0][5]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.begin.html.angular']
+      expect(lines[0][6]).toEqual value: '{{', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular', 'punctuation.definition.block.begin.angular']
+      expect(lines[0][7]).toEqual value: 'img', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular']
+      expect(lines[0][8]).toEqual value: '}}', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular', 'punctuation.definition.block.end.angular']
+      expect(lines[0][9]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.end.html.angular']
+      expect(lines[0][13]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.begin.html.angular']
+      expect(lines[0][14]).toEqual value: '{{', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular', 'punctuation.definition.block.begin.angular']
+      expect(lines[0][15]).toEqual value: 'setImage(img)', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular']
+      expect(lines[0][16]).toEqual value: '}}', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular', 'punctuation.definition.block.end.angular']
+      expect(lines[0][17]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.end.html.angular']
