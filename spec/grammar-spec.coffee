@@ -45,6 +45,13 @@ describe 'directive grammar', ->
 
       expect(lines[0][3]).toEqual value: 'NG-REPEAT', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
+    it 'tokenizes ng-controller attribute in body tag', ->
+      lines = grammar.tokenizeLines '''
+        <body ng-controller="TestCtrl">
+      '''
+
+      expect(lines[0][3]).toEqual value: 'ng-controller', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+
   describe 'directive element', ->
     it 'tokenizes ng-include element inside HTML', ->
       lines = grammar.tokenizeLines '''
