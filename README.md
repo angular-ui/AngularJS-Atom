@@ -14,7 +14,7 @@ pull request to add snippets, make grammar tweaks, etc.
 
 You can use autocompletes for directives in HTML and
 angular.js's variables and function in JavaScript.
-See [scoped-properties](https://github.com/angular-ui/AngularJS-Atom/blob/master/scoped-properties/)
+See [settings](https://github.com/angular-ui/AngularJS-Atom/blob/master/settings/)
 for more details.
 
 ![](https://raw.github.com/angular-ui/AngularJS-Atom/master/screenshots/autocompletes.gif)
