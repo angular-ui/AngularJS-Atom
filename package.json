@@ -3,6 +3,12 @@
   "version": "0.2.0",
   "main": "./lib/angularjs",
   "description": "An AngularJS package for Atom",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "javascript",
+    "frontend"
+  ],
   "repository": "https://github.com/angular-ui/AngularJS-Atom",
   "readmeFilename": "README.md",
   "license": "MIT",
