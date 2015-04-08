@@ -23,7 +23,20 @@
     'name': 'meta.tag.block.any.html'
   }
   {
-    'begin': '(</?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\\b)'
+    'begin': '''
+      (</?)((?i:
+        address|article|aside|applet|
+        blockquote|center|
+        dir|div|dl|dt|dd|
+        fieldset|footer|form|frame|frameset|
+        header|hr|h1|h2|h3|h4|h5|h6|
+        iframe|
+        menu|nav|noframes|
+        object|ol|
+        p|pre|
+        section|ul
+      )\\b)
+      '''
     'beginCaptures':
       '1':
         'name': 'punctuation.definition.tag.begin.html'
@@ -40,7 +53,26 @@
     ]
   }
   {
-    'begin': '(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|body|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)\\b)'
+    'begin': '''
+      (</?)((?i:
+        a|abbr|acronym|area|
+        b|base|basefont|bdo|big|body|br|button|
+        caption|cite|code|col|colgroup|
+        del|dfn|
+        em|font|
+        head|html|
+        i|img|input|ins|isindex|
+        kbd|
+        label|legend|li|link|
+        map|meta|
+        noscript|
+        optgroup|option|
+        param|q|
+        s|samp|script|select|small|span|strike|strong|style|sub|sup|
+        table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|
+        u|var
+      )\\b)
+      '''
     'beginCaptures':
       '1':
         'name': 'punctuation.definition.tag.begin.html'
@@ -74,7 +106,28 @@
       { 'include': 'source.js' }
     ]
   'angular-directive-attribute':
-    'begin': '\\b((?i:ng-(app|strict-di|bind|bind-html|bind-template|blur|change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|dblclick|disabled|focus|form|hide|href|if|include|init|keydown|keypress|keyup|list|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|non-bindable|open|paste|pluralize|readonly|repeat|repeat-start|repeat-end|selected|show|src|srcset|style|submit|switch|switch-when|switch-default|transclude|value|swipe-left|swipe-right|view|messages|message|animate-children)))\\b\\s*(=?)'
+    'begin': '''
+      \\b((?i:ng-(
+        animate-children|app|
+        bind|bind-html|bind-template|blur|
+        change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|
+        dblclick|disabled|
+        focus|form|
+        hide|href|
+        if|include|init|
+        keydown|keypress|keyup|
+        list|
+        messages|message|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|
+        non-bindable|
+        open|
+        paste|pluralize|
+        readonly|repeat|repeat-start|repeat-end|
+        selected|show|src|srcset|style|strict-di|submit|switch|switch-when|switch-default|
+        transclude|
+        value|
+        swipe-left|swipe-right|view|
+      )))\\b\\s*(=?)
+      '''
     'beginCaptures':
       '1':
          'name': 'entity.other.attribute-name.html.angular'
