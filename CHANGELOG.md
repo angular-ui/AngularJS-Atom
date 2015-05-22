@@ -1,4 +1,4 @@
-### 0.2.1 (2015-05-22)
+### 0.3.0 (2015-05-23)
 
 #### Bug fixes
 * fix Atom update problem that Atom doen't update
