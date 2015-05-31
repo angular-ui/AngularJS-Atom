@@ -9,3 +9,8 @@
 # https://atom.io/docs/latest/advanced/keymaps
 #'.workspace':
 #  'ctrl-alt-o': 'angularjs:toggle'
+
+# fix to confilct with emmet's tab autocompletion
+# <https://github.com/angular-ui/AngularJS-Atom/issues/19>
+'atom-text-editor[data-grammar="text html angular"]:not([mini])':
+  'tab': 'emmet:expand-abbreviation-with-tab'
