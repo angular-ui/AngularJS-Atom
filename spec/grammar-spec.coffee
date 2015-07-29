@@ -59,6 +59,12 @@ describe 'directive grammar', ->
 
       expect(lines[0][3]).toEqual value: 'ng-options', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
+    it 'tokenizes ng- attributes for anchor tags', ->
+      lines = grammar.tokenizeLines '''
+        <a href="/url" ng-click='{{setImage(img)}}'>
+      '''
+      expect(lines[0][9]).toEqual value: 'ng-click', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+
   describe 'directive element', ->
     it 'tokenizes ng-include element inside HTML', ->
       lines = grammar.tokenizeLines '''
