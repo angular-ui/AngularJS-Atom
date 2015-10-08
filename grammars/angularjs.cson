@@ -102,7 +102,7 @@
       { 'include': 'source.js' }
     ]
   'angular-directive-attribute':
-    'begin': '\\b((?i:ng-(' +
+    'begin': '\\b((?i:(data-|x-)?ng(-|_|:)(' +
         'animate-children|app|' +
         'bind|bind-html|bind-template|blur|' +
         'change|checked|class|class-even|class-odd|click|cloak|controller|copy|csp|cut|' +
