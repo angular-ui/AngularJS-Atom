@@ -10,7 +10,7 @@
 ]
 'patterns': [
   {
-    'begin': '(</?)((?i:ng-(form|include|pluralize|transclude|view|messages|message))\\b)'
+    'begin': '(</?)((?i:(data-|x-)?ng(-|_|:)(form|include|pluralize|transclude|view|messages|message))\\b)'
     'beginCaptures':
       '1':
         'name': 'punctuation.definition.tag.begin.html'
