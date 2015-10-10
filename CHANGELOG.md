@@ -1,3 +1,12 @@
+### 0.3.1 (2015-10-10)
+
+* support normailzed angular's tags and attributes
+  (e.g data-ng-if, x-ng-if)(#44)
+
+#### Bug fixes
+* fix confict with emmet's tab autocompletion(#19)
+* fix wrong syntax highlight(#42, #43)
+
 ### 0.3.0 (2015-05-23)
 
 #### Bug fixes
