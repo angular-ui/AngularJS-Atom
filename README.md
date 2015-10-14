@@ -507,3 +507,16 @@ angular.lowercase(${1:string});
 ```
 angular.uppercase(${1:string});
 ```
+
+## FAQ
+
+#### Can't I use autocompletion with tab when I installed emmet plugin
+
+See [emmet's document](https://github.com/emmetio/emmet-atom#tab-key)
+
+In your `keymap.cson1, add the following code.
+
+```
+'atom-text-editor[data-grammar="text html angular"]:not([mini])':
+  'tab': 'emmet:expand-abbreviation-with-tab'
+```
