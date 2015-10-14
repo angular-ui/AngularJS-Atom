@@ -1,3 +1,6 @@
+### 0.3.3 (2015-10-14)
+* rollback fixing emmet's tab autocompletion
+
 ### 0.3.1 (2015-10-10)
 
 * support normailzed angular's tags and attributes
