@@ -180,12 +180,12 @@
     "prefix": "nghttp"
     "body": """
       $http({method: '${1:GET}', url: '$2'})
-      .success(function(data, status, headers, config) {
-        $3
-      })
-      .error(function(data, status, headers, config) {
-        $4
-      });
+      .then(function successCallback(data, status, headers, config) {
+		$3
+	  }, 
+	  function errorCallback(data, status, headers, config) {
+		$4
+	  });
     """
   "copy":
     "prefix": "ngcopy"
