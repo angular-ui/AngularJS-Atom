@@ -84,6 +84,38 @@
       { 'include': '#tag-stuff' }
     ]
   }
+  {
+    'begin': '(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*\\btype\\s*=\\s*[\'"]?text/ng-template[\'"]?)(?![^>]*/>)'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.definition.tag.html'
+      '2':
+        'name': 'entity.name.tag.script.html'
+    'end': '(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?'
+    'endCaptures':
+      '2':
+        'name': 'punctuation.definition.tag.html'
+    'contentName': 'text.embedded.html'
+    'patterns': [
+      {
+        'include': '#tag-stuff'
+      }
+      {
+        'begin': '(?<!</(?:script|SCRIPT))(>)'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.tag.html'
+          '2':
+            'name': 'entity.name.tag.script.html'
+        'end': '(</)((?i:script))'
+        'patterns': [
+          {
+            'include': 'text.html.angular'
+          }
+        ]
+      }
+    ]
+  }
   { 'include': '#angular-expressions' }
   { 'include': 'text.html.basic' }
 ]
