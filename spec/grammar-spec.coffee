@@ -45,6 +45,15 @@ describe 'directive grammar', ->
 
       expect(lines[0][3]).toEqual value: 'NG-REPEAT', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
 
+    it 'tokenizes ng-repeat-start and ng-repeat-end attribute', ->
+      lines = grammar.tokenizeLines '''
+        <div ng-repeat-start></div>
+        <div ng-repeat-end></div>
+      '''
+
+      expect(lines[0][3]).toEqual value: 'ng-repeat-start', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+      expect(lines[1][3]).toEqual value: 'ng-repeat-end', scopes: ['text.html.angular', 'meta.tag.block.any.html', 'meta.attribute.html.angular', 'entity.other.attribute-name.html.angular']
+
     it 'tokenizes ng-controller attribute in body tag', ->
       lines = grammar.tokenizeLines '''
         <body ng-controller="TestCtrl">
