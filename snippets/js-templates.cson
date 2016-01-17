@@ -1,4 +1,4 @@
-".source.js":
+".source.js, .source.js-semantic":
   "module":
     "prefix": "ngm"
     "body": "angular.module('$1', [$2])$3"
@@ -182,7 +182,7 @@
       $http({method: '${1:GET}', url: '$2'})
       .then(function successCallback(data, status, headers, config) {
 		$3
-	  }, 
+	  },
 	  function errorCallback(data, status, headers, config) {
 		$4
 	  });
