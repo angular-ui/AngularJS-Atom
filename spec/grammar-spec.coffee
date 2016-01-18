@@ -195,3 +195,21 @@ describe 'directive grammar', ->
       expect(lines[0][15]).toEqual value: 'setImage(img)', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular']
       expect(lines[0][16]).toEqual value: '}}', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'meta.tag.template.angular', 'meta.tag.template.angular', 'punctuation.definition.block.end.angular']
       expect(lines[0][17]).toEqual value: '"', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'meta.attribute.html.angular', 'string.quoted.double.html.angular', 'punctuation.definition.string.end.html.angular']
+
+  describe 'angular ng-template', ->
+    it 'tokenizes contents inside ng-template', ->
+      lines = grammar.tokenizeLines '''
+        <script type="text/ng-template" id="/tpl.html">
+          <li>First name: {{firstname}}</li>
+        </script>
+      '''
+
+      expect(lines[1][1]).toEqual value: '<', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'punctuation.definition.tag.begin.html']
+      expect(lines[1][2]).toEqual value: 'li', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'entity.name.tag.inline.any.html']
+      expect(lines[1][3]).toEqual value: '>', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'punctuation.definition.tag.end.html']
+      expect(lines[1][5]).toEqual value: '{{', scopes: ['text.html.angular', 'meta.tag.template.angular', 'punctuation.definition.block.begin.angular']
+      expect(lines[1][6]).toEqual value: 'firstname', scopes: ['text.html.angular', 'meta.tag.template.angular']
+      expect(lines[1][7]).toEqual value: '}}', scopes: ['text.html.angular', 'meta.tag.template.angular', 'punctuation.definition.block.end.angular']
+      expect(lines[1][8]).toEqual value: '</', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'punctuation.definition.tag.begin.html']
+      expect(lines[1][9]).toEqual value: 'li', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'entity.name.tag.inline.any.html']
+      expect(lines[1][10]).toEqual value: '>', scopes: ['text.html.angular', 'meta.tag.inline.any.html', 'punctuation.definition.tag.end.html']
