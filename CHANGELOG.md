@@ -1,3 +1,12 @@
+### 0.3.4 (2016-01-18)
+* bug fixes -
+  [#46](https://github.com/angular-ui/AngularJS-Atom/pull/46),
+  [#52](https://github.com/angular-ui/AngularJS-Atom/pull/52)
+* add syntax highlight for ng-template -
+  [#51](https://github.com/angular-ui/AngularJS-Atom/pull/51)
+* support [language-javascript-semantic](https://atom.io/packages/language-javascript-semantic) -
+  [#53](https://github.com/angular-ui/AngularJS-Atom/pull/53)
+
 ### 0.3.3 (2015-10-14)
 * rollback fixing emmet's tab autocompletion
 
