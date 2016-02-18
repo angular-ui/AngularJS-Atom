@@ -514,7 +514,7 @@ angular.uppercase(${1:string});
 
 See [emmet's document](https://github.com/emmetio/emmet-atom#tab-key)
 
-In your `keymap.cson1, add the following code.
+In your `keymap.cson`, add the following code.
 
 ```
 'atom-text-editor[data-grammar="text html angular"]:not([mini])':
