@@ -148,7 +148,7 @@
         'non-bindable|' +
         'open|options|' +
         'paste|pluralize|' +
-        'readonly|repeat-start|repeat-end|repeat|' +
+        'readonly|repeat-start|repeat-end|repeat|required|' +
         'selected|show|src|srcset|style|strict-di|submit|switch|switch-when|switch-default|' +
         'transclude|' +
         'value|' +
