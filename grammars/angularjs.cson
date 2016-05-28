@@ -145,12 +145,12 @@
         'if|include|init|' +
         'keydown|keypress|keyup|' +
         'list|' +
-        'messages|message|model|model-options|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|' +
+        'messages|message|model-options|model|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|' +
         'non-bindable|' +
         'open|options|' +
         'paste|pluralize|' +
         'readonly|repeat-start|repeat-end|repeat|required|' +
-        'selected|show|src|srcset|style|strict-di|submit|switch|switch-when|switch-default|' +
+        'selected|show|src|srcset|style|strict-di|submit|switch-when|switch-default|switch|' +
         'transclude|' +
         'value|' +
         'swipe-left|swipe-right|view|' +
