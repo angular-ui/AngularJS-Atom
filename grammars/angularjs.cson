@@ -157,7 +157,7 @@
       ')))\\b\\s*(=?)'
     'beginCaptures':
       '1':
-         'name': 'entity.other.attribute-name.html.angular'
+        'name': 'support.other.attribute-name.html.angular'
     'end': '(?<=\'|")|(?=\\s|>)'
     'name': 'meta.attribute.html.angular'
     'patterns': [
@@ -166,7 +166,6 @@
         'beginCaptures':
           '0':
             'name': 'punctuation.definition.string.begin.html.angular'
-        'contentName': 'meta.tag.template.angular'
         'end': '"'
         'endCaptures':
           '0':
@@ -181,7 +180,6 @@
         'beginCaptures':
           '0':
             'name': 'punctuation.definition.string.begin.html.angular'
-        'contentName': 'meta.tag.template.angular'
         'end': '\''
         'endCaptures':
           '0':
