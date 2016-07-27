@@ -19,7 +19,7 @@ for more details.
 
 ![](https://raw.github.com/angular-ui/AngularJS-Atom/master/screenshots/autocompletes.gif)
 
-If you type some prefix and press `ctrl` + `space`,
+If you type some prefix and press <kbd>Tab</kbd> or <kbd>Enter</kbd>,
 you can use autocompletes in below.
 
 #### HTML
