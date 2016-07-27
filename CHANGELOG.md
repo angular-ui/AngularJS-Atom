@@ -1,4 +1,5 @@
 ### 0.3.5 (2016-07-27)
+* change syntax names to compatable with themes - [#50](https://github.com/angular-ui/AngularJS-Atom/issues/50)
 * fix a ng-model-options syntax highlight bug - [#58](https://github.com/angular-ui/AngularJS-Atom/issues/58)
 * add syntax highlight for ng-required -
   [#59](https://github.com/angular-ui/AngularJS-Atom/pull/59)
