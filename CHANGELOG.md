@@ -1,3 +1,9 @@
+### 0.3.5 (2016-07-27)
+* fix a ng-model-options syntax highlight bug - [#58](https://github.com/angular-ui/AngularJS-Atom/issues/58)
+* add syntax highlight for ng-required -
+  [#59](https://github.com/angular-ui/AngularJS-Atom/pull/59)
+* support jsp files - [#55](https://github.com/angular-ui/AngularJS-Atom/pull/55)
+
 ### 0.3.4 (2016-01-18)
 * bug fixes -
   [#46](https://github.com/angular-ui/AngularJS-Atom/pull/46),
