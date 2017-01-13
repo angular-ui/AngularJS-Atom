@@ -4,15 +4,14 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-atom-text-editor,
-atom-text-editor::shadow {
-  .entity.name.tag.block.any.html.angular,
-  .entity.other.attribute-name.html.angular {
+atom-text-editor.editor {
+  .syntax--entity.syntax--name.syntax--tag.syntax--block.syntax--any.syntax--html.syntax--angular,
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--html.syntax--angular {
     color: @text-color-warning;
   }
 
-  .punctuation.definition.block.begin.angular,
-  .punctuation.definition.block.end.angular {
+  .syntax--punctuation.syntax--definition.syntax--block.syntax--begin.syntax--angular,
+  .syntax--punctuation.syntax--definition.syntax--block.syntax--end.syntax--angular {
     color: @text-color-success;
   }
 }
