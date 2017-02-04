@@ -1,6 +1,6 @@
 {
   "name": "angularjs",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "main": "./lib/angularjs",
   "description": "An AngularJS package for Atom",
   "keywords": [
