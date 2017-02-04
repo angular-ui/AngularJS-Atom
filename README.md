@@ -1,6 +1,6 @@
-# AngularJS support in Atom
+# AngularJS v1.x support in Atom
 
-Adds syntax highlighting and snippets to AngularJS in Atom.
+Adds syntax highlighting and snippets to AngularJS v1.x in Atom.
 
 Originally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle)
 from the [AngularJS TextMate bundle](https://github.com/angular-ui/AngularJs.tmbundle).

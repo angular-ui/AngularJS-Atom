@@ -1,3 +1,7 @@
+### 0.4.0 (2017-02-04)
+* fix deprecated selector since Atom v1.13.0 - [#68](https://github.com/angular-ui/AngularJS-Atom/issues/68)
+* add new attributes of angularjs
+
 ### 0.3.5 (2016-07-27)
 * change syntax names to compatable with themes - [#50](https://github.com/angular-ui/AngularJS-Atom/issues/50)
 * fix a ng-model-options syntax highlight bug - [#58](https://github.com/angular-ui/AngularJS-Atom/issues/58)
