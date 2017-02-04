@@ -62,10 +62,13 @@ ng-href
 ng-if
 ng-include
 ng-init
+ng-jq
 ng-keydown
 ng-keypress
 ng-keyup
 ng-list
+ng-maxlength
+ng-minlength
 ng-model
 ng-model-options
 ng-mousedown
@@ -77,6 +80,7 @@ ng-mouseup
 ng-non-bindable
 ng-open
 ng-paste
+ng-pattern
 ng-pluralize
 ng-readonly
 ng-repeat
