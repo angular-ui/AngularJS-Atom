@@ -143,12 +143,13 @@
         'focus|form|' +
         'hide|href|' +
         'if|include|init|' +
+        'jq|' +
         'keydown|keypress|keyup|' +
         'list|' +
-        'messages|message|model-options|model|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|' +
+        'messages|message|model-options|maxlength|minlength|model|mousedown|mouseenter|mouseleave|mousemove|mouseover|mouseup|' +
         'non-bindable|' +
         'open|options|' +
-        'paste|pluralize|' +
+        'paste|pattern|pluralize|' +
         'readonly|repeat-start|repeat-end|repeat|required|' +
         'selected|show|src|srcset|style|strict-di|submit|switch-when|switch-default|switch|' +
         'transclude|' +
