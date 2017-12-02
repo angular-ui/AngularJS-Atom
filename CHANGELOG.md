@@ -1,3 +1,7 @@
+### 0.5.0 (2017-12-02)
+* use autocomplete-plus for autocompletion.
+  * older autocompletion doesn't work with latest Atom.
+
 ### 0.4.0 (2017-02-04)
 * fix deprecated selector since Atom v1.13.0 - [#68](https://github.com/angular-ui/AngularJS-Atom/issues/68)
 * add new attributes of angularjs
