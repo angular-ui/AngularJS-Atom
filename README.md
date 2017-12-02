@@ -436,7 +436,7 @@ angular.module($3).controller('$1Ctrl', $1Ctrl);
  * @name $2
  * @description
  * $3
- * 
+ *
  */
 ```
 

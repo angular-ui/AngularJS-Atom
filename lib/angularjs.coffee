@@ -1,4 +1,6 @@
-module.exports =
-  activate: (state) ->
+provider = require './provider'
 
-  deactivate: ->
+module.exports =
+  activate: ->
+
+  getProvider: -> provider
