@@ -24,19 +24,6 @@ you can use autocompletes in below.
 
 #### HTML
 ```
-ng-valid
-ng-invalid
-ng-pristine
-ng-dirty
-ng-show
-ng-required
-ng-minlength
-ng-maxlength
-ng-pattern
-ng-true-value
-ng-false-value
-ng-value
-ng-trim
 ng-app
 ng-bind
 ng-bind-html
@@ -67,8 +54,6 @@ ng-keydown
 ng-keypress
 ng-keyup
 ng-list
-ng-maxlength
-ng-minlength
 ng-model
 ng-model-options
 ng-mousedown
@@ -79,10 +64,27 @@ ng-mouseover
 ng-mouseup
 ng-non-bindable
 ng-open
+ng-pluralize
+ng-show
+ng-transclude
+ng-view
+ng-messages
+ng-message
+ng-messages-include
+ng-swipe-left
+ng-swipe-righ
+ng-dirty
+ng-false-value
+ng-invalid
+ng-maxlength
+ng-minlength
+ng-message-exp
+ng-options
 ng-paste
 ng-pattern
-ng-pluralize
+ng-pristine
 ng-readonly
+ng-required
 ng-repeat
 ng-repeat-start
 ng-repeat-end
@@ -92,15 +94,12 @@ ng-srcset
 ng-style
 ng-submit
 ng-switch
-ng-options
 ng-switch-when
 ng-switch-default
-ng-transclude
-ng-view
-ng-messages
-ng-message
-ng-swipe-left
-ng-swipe-right
+ng-trim
+ng-true-value
+ng-valid
+ng-value
 ```
 
 #### JavaScript
