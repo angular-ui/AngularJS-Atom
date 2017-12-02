@@ -12,8 +12,7 @@ module.exports =
 
   getSuggestions: (request) ->
     if @isJavaScript(request)
-      console.log('is js');
-      []
+      @getJavascriptCompletions(request)
     else if @isHtml(request)
       if @isAttributeStart(request)
         @getAttributeNameCompletions(request)
@@ -82,6 +81,12 @@ module.exports =
     completions = []
     for idx, tag of @completions.directives when ignorePrefix or firstCharsEqual(tag, prefix)
       completions.push({ text: tag, type: 'tag' })
+    completions
+
+  getJavascriptCompletions: ({ prefix, editor, bufferPosition }) ->
+    completions = []
+    for idx, tag of @completions.javascript when firstCharsEqual(tag, prefix)
+      completions.push({ text: tag, type: 'angularjs' })
     completions
 
   getPreviousAttribute: (editor, bufferPosition) ->
