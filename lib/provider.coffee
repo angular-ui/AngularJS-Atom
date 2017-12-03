@@ -85,7 +85,7 @@ module.exports =
 
   getJavascriptCompletions: ({ prefix, editor, bufferPosition }) ->
     completions = []
-    for idx, tag of @completions.javascript when firstCharsEqual(tag, prefix)
+    for idx, tag of @completions.javascript
       completions.push({ text: tag, type: 'angularjs' })
     completions
 
