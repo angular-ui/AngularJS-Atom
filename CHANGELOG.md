@@ -1,3 +1,7 @@
+### 0.5.1 (2017-12-03)
+* fix Uncaught TypeError: Cannot read property 'toLowerCase' of undefined - [#82](https://github.com/angular-ui/AngularJS-Atom/issues/82)
+* support autocompletions with prefix started with $
+
 ### 0.5.0 (2017-12-02)
 * use autocomplete-plus for autocompletion.
   * older autocompletion doesn't work with latest Atom.
