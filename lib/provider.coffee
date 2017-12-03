@@ -85,8 +85,9 @@ module.exports =
 
   getJavascriptCompletions: ({ prefix, editor, bufferPosition }) ->
     completions = []
+    prefix = @getPrefix(editor, bufferPosition)
     for idx, tag of @completions.javascript
-      completions.push({ text: tag, type: 'angularjs' })
+      completions.push({ text: tag, type: 'angularjs', replacementPrefix: prefix })
     completions
 
   getPreviousAttribute: (editor, bufferPosition) ->
@@ -99,6 +100,16 @@ module.exports =
       quoteIndex--
 
     attributePattern.exec(editor.getTextInRange([[bufferPosition.row, 0], [bufferPosition.row, quoteIndex]]))?[1]
+
+  getPrefix: (editor, bufferPosition) ->
+    # Whatever your prefix regex might be
+    regex = /\$?[\w0-9_-]+$/
+
+    # Get the text for the line up to the triggered buffer position
+    line = editor.getTextInRange([[bufferPosition.row, 0], bufferPosition])
+
+    # Match the regex to the line, and return the match
+    line.match(regex)?[0] or ''
 
 firstCharsEqual = (str1, str2) ->
   str1[0].toLowerCase() is str2[0].toLowerCase()
