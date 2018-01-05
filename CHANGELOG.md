@@ -1,3 +1,6 @@
+### 0.5.2 (2018-01-05)
+* disable autocompletion in JavaScript with comma and so on - [#83](https://github.com/angular-ui/AngularJS-Atom/issues/83)
+
 ### 0.5.1 (2017-12-03)
 * fix Uncaught TypeError: Cannot read property 'toLowerCase' of undefined - [#82](https://github.com/angular-ui/AngularJS-Atom/issues/82)
 * support autocompletions with prefix started with $
