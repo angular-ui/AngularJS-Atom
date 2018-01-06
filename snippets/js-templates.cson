@@ -149,6 +149,13 @@
         $2
       })
     """
+  "$timeout":
+    "prefix": "ngto"
+    "body": """
+      $timeout(function() {
+        $2
+      }, $1)
+    """
   "controller":
     "prefix": "ngc"
     "body": """
@@ -181,11 +188,11 @@
     "body": """
       $http({method: '${1:GET}', url: '$2'})
       .then(function successCallback(data, status, headers, config) {
-		$3
-	  },
-	  function errorCallback(data, status, headers, config) {
-		$4
-	  });
+        $3
+      },
+      function errorCallback(data, status, headers, config) {
+        $4
+      });
     """
   "copy":
     "prefix": "ngcopy"

@@ -412,6 +412,13 @@ $scope.$watch('$1', function(newValue, oldValue) {
 });
 ```
 
+#### ngto
+```
+$timeout(function() {
+  $2
+}, $1)
+```
+
 ##### ngc
 ```
 var $1 = function($scope, $2) {
