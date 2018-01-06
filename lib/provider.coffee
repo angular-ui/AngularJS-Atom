@@ -11,7 +11,7 @@ module.exports =
   completions: COMPLETIONS
 
   getSuggestions: (request) ->
-    if @isJavaScript(request) and @isIgnoreInJavaScript(request)
+    if @isJavaScript(request) and not @isIgnoreInJavaScript(request)
       @getJavascriptCompletions(request)
     else if @isHtml(request)
       if @isAttributeStart(request)
@@ -26,16 +26,17 @@ module.exports =
       return true if scope.startsWith('source') and scope.endsWith('.js')
     return false
 
-  isIgnoreInJavaScript: ({ scopeDescriptor }) ->
+  isIgnoreInJavaScript: ({ scopeDescriptor, prefix }) ->
     scopes = scopeDescriptor.getScopesArray()
-    return false if scopes.indexOf('punctuation.terminator.statement.js') isnt -1 or
+    return true if scopes.indexOf('punctuation.terminator.statement.js') isnt -1 or
       scopes.indexOf('keyword.operator.assignment.js') isnt -1 or
       scopes.indexOf('meta.delimiter.object.comma.js') isnt -1 or
       scopes.indexOf('keyword.operator.comparison.js') isnt -1 or
       scopes.indexOf('keyword.operator.ternary.js') isnt -1 or
       scopes.indexOf('keyword.operator.js') isnt -1 or
-      scopes.indexOf('string.quoted.template.js') isnt -1
-    return true
+      scopes.indexOf('string.quoted.template.js') isnt -1 or
+      prefix.trim() is ''
+    return false
 
   isHtml: ({ scopeDescriptor }) ->
     for scope in scopeDescriptor.getScopesArray()
