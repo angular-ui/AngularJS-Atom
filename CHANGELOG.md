@@ -1,3 +1,7 @@
+### 0.5.3 (2018-01-16)
+* disable autocompletion in JavaScript with whitespaces - [#83](https://github.com/angular-ui/AngularJS-Atom/issues/83)
+* support a snippets for $timeout - [#79](https://github.com/angular-ui/AngularJS-Atom/issues/79)
+
 ### 0.5.2 (2018-01-05)
 * disable autocompletion in JavaScript with comma and so on - [#83](https://github.com/angular-ui/AngularJS-Atom/issues/83)
 
